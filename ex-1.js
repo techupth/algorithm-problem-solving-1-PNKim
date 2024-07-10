@@ -4,17 +4,14 @@ function twoSum(numbers, target) {
   let sum = 0;
   for (let i = 0; i < numbers.length; i++) {
     sum = 0;
-    for (let j = i; j < numbers.length; j++) {
-      sum += numbers[j];
-      result.push(j);
-      if (sum > target) {
-        result = [];
-        return result;
-      } else if (sum === target) {
-        return result;
+    for (let j = i + 1; j < numbers.length; j++) {
+      sum = numbers[i] + numbers[j];
+      if (sum === target) {
+        result = [i, j];
       }
     }
   }
+  return result;
 }
 
 let numbers = [2, 7, 11, 15];
